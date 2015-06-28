@@ -1,0 +1,626 @@
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title>Jeeshop1.1部署文档</title>
+
+
+<link rel="shortcut icon" href="http://www.jeeshop.net/resource/images/favicon.png">
+
+
+
+
+
+<!-- <link rel="stylesheet" href="http://v3.bootcss.com/examples/non-responsive/non-responsive.css"  type="text/css"> -->
+
+
+
+<link href="/resource/theme/fixed/css/bootstrap.css" rel="stylesheet" />
+<link href="/resource/theme/fixed/css/style.css" rel="stylesheet" />
+<link href="/resource/theme/fixed/css/bootstrap-responsive.css" rel="stylesheet" />
+
+
+
+
+<link href="/resource/theme/fixed/css/superfish.css" rel="stylesheet" />
+
+<link href="/resource/theme/fixed/css/supersized.css" rel="stylesheet" />
+<link href="/resource/theme/fixed/css/animate.css" rel="stylesheet" />
+
+
+
+<link id="css_color" href="/resource/theme/fixed/css/colors/color_red.css" rel="stylesheet" />
+<link id="css_layout" href="/resource/theme/fixed/css/layout/layout_boxed.css" rel="stylesheet" />
+<link href="/resource/theme/fixed/font/stylesheet.css" rel="stylesheet" />
+<link href="/resource/theme/fixed/css/supersized.shutter.css" rel="stylesheet" />
+<style type="text/css">
+.title {
+	display: block;
+	/* 	width: 280px; */
+	overflow: hidden; /*注意不要写在最后了*/
+	white-space: nowrap;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+}
+
+.jeeshop_item {
+	font-size: 12px;
+	font-weight: 300px;
+	margin: 10px;
+	padding: 0px;
+	border: 0px;
+	font-weight: lighter;
+	font-style: inherit;
+	vertical-align: baseline;
+	line-height: 15px;
+}
+.small_font{
+	text-align: right;width: 100%;margin-bottom: 0px;
+}
+
+#blogContent img{
+	max-width: 656px;
+}
+
+.lazy {
+  display: none;
+}
+
+</style>
+</head>
+
+<body>
+	
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+.centerImageCss{
+	width: 289px;
+	height: 190px;
+}
+.title {
+	display: block;
+	width: 280px;
+	overflow: hidden; /*注意不要写在最后了*/
+	white-space: nowrap;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+}
+
+.first{
+	font-weight: bold;font-size: 22px;vertical-align: middle;
+}
+body{
+	font-size: 12px;padding-top: 0px;
+/*   	font-family: 微软雅黑, Verdana, sans-serif, 宋体; */
+}
+
+.menu-new{
+background-image: url(http://img04.taobaocdn.com/imgextra/i4/1989111438/TB25TfkXVXXXXc3XXXXXXXXXXXX-1989111438.gif);
+background-repeat: no-repeat;
+background-position: top;
+/* padding-top: 15px; */
+}
+</style>
+
+
+
+<!-- 顶部导航条 -->
+<header class="header">
+			<div class="container">
+				<div class="row">
+					<ul id="responsive_menu">
+						<li>
+							menu
+						</li>
+					</ul>
+					<div class="span4 logo">
+						<a href="http://www.jeeshop.net"><img style="height:57px;width:207px;;background-color: #fff;" alt="" src="/resource/theme/fixed/img/jeeshop.gif" class="logoimg" /></a>
+					</div>
+					<nav class="span12">
+						<div class="menu-main">
+							<ul id="main-menu" class="menu">
+								
+								
+								
+									<li class="menu-item">
+								
+									<a href="http://www.jeeshop.net" title="">首页</a>
+								</li>
+								<li class="menu-item ">
+									<a href="#" title="">Demo</a>
+									<ul class="sub-menu">
+										<li class="menu-item">
+											<a target="_blank" href="http://demo.jeeshop.net/?responsive=n">Jeeshop门户</a>
+										</li>
+										<li class="menu-item">
+											<a target="_blank" href="http://demo.jeeshop.net/manage/admin.jsp">Jeeshop后台</a>
+										</li>
+										<li class="menu-item">
+											<a target="_blank" href="http://spider.jeeshop.net">Spider云采集</a>
+										</li>
+									</ul>
+								</li>
+								
+								
+								
+								
+								
+								
+								
+									<li class="menu-item">
+								
+									<a href="http://www.jeeshop.net/blog/list.html" title="">分享</a>
+									
+								</li>
+								
+								
+								
+									<li class="menu-item">
+								
+									<a href="http://www.jeeshop.net/message.html" title="">留言</a>
+								</li>
+								<!--
+								<li class="menu-item">
+									<a href="#" title="vivamus eget">Contact</a>
+									<ul class="sub-menu">
+										<li class="menu-item">
+											<a href="contact_full.html">Full width</a>
+										</li>
+										<li class="menu-item">
+											<a href="contact_sidebar.html">With sidebar</a>
+										</li>
+										<li class="menu-item">
+											<a href="contact-sidebar-fwmap.html">With fullwidth map</a>
+										</li>
+									</ul>
+								</li>
+								-->
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<!-- Header End -->
+		<div class="container responsive-menu-wrapper">
+			<div class="row">
+				<div class="responsive-menu-items span16"></div>
+			</div>
+		</div>
+	<div id="mainContentDiv" class="container main-container" style="margin-top:650px;">
+		<div class="row">
+			<div class="span16">
+				<div>
+					<ul class="breadcrumb">
+					  <li><a href="http://www.jeeshop.net">首页</a><span class="divider">/</span></li>
+					  <li><a href="http://www.jeeshop.net/blog/list.html">分享</a><span class="divider">/</span></li>
+					  <li class="active">Jeeshop1.1部署文档</li>
+					</ul>
+				</div>
+				
+				
+          		<div class="panel panel-default">
+				  	<div class="panel-body" id="blogContent">
+					  	<h3 style="font-weight: 900;vertical-align: middle;text-transform: none;">
+					  		
+							
+					  		Jeeshop1.1部署文档
+					  	</h3>
+					  	<br>
+					  	<div style="text-align: right;">
+				  			<span class="badge" style="background-color:red;margin-right:20px">
+				  				<a href="http://www.jeeshop.net/catalog/jeeshop.html" style="color:#fff">jeeshop</a>
+				  			</span>
+				  	
+							<span class="glyphicon glyphicon-signal"></span>
+							<small>发布于：2014-07-17 | 阅读4482次</small>
+					  	</div>
+						<hr style="margin-top:5px;">
+
+					  	
+						
+<h3>
+	一、所需环境
+</h3>
+<p class="p0" style="text-indent:21.0000pt;">
+	JDK1.6<span>、</span><span>tomcat6.0</span><span>、</span><span>mysql</span> 
+</p>
+<h3>
+	二、项目部署
+</h3>
+<ol>
+	<li>
+		<div>
+			<span style="line-height:2;font-size:14px;font-family:'Microsoft YaHei';">下载jeeshop源码。</span> 
+		</div>
+		<div style="margin-left:30px;">
+			<span style="line-height:2;font-size:14px;font-family:'Microsoft YaHei';">下载地址：<a href="http://git.oschina.net/jeeshop/jeeshop" target="_blank">http://git.oschina.net/jeeshop/jeeshop</a></span> 
+		</div>
+	</li>
+	<li>
+		<div>
+			<span style="line-height:2;font-size:14px;font-family:'Microsoft YaHei';">建立jeeshop数据库和表结构</span> 
+		</div>
+		<div style="margin-left:30px;">
+			<span style="line-height:2;font-size:14px;font-family:'Microsoft YaHei';">找到下载的jeeshop目录jeeshop/web/doc下的sql文件git_jeeshop_20140702.sql在你本地的mysql工作空间执行，完成数据库和表结构的建立。</span> 
+		</div>
+	</li>
+	<li>
+		<div>
+			<span style="line-height:2;font-size:14px;font-family:'Microsoft YaHei';">导入源码到eclipse工作空间，并且解决jar包的路径问题，然后build下。</span> 
+		</div>
+	</li>
+	<li>
+		<div>
+			<span style="line-height:2;font-size:14px;font-family:'Microsoft YaHei';">修改src/applicationContext.xml下的数据库密码为你本地的mysql的数据库密码。</span> 
+		</div>
+	</li>
+	<li>
+		<div>
+			<span style="line-height:2;font-size:14px;font-family:'Microsoft YaHei';">部署项目到tomcat</span> 
+		</div>
+		<div style="margin-left:30px;">
+			<span style="line-height:2;font-size:14px;font-family:'Microsoft YaHei';">比如我本地是E:\apache-tomcat-6.0.37\conf\server.xml，
+则在server.xml文件的节点之间增加</span> 
+		</div>
+<pre class="prettyprint lang-xml">&lt;Context path="/jeeshop" docBase="D:\git\jeeshop\web" debug="0" reloadable="true" crossContext="true"/&gt;</pre>
+		<div style="margin-left:30px;">
+			<span style="line-height:2;font-size:14px;font-family:'Microsoft YaHei';">docBase：为你jeeshop项目的路径
+		path：为你访问的项目名称。</span> 
+		</div>
+	</li>
+	<li>
+		<div>
+			<span style="line-height:2;font-size:14px;font-family:'Microsoft YaHei';">启动tomcat，如果没有任何异常，则可以访问</span> 
+		</div>
+		<div style="margin-left:30px;">
+			<span style="line-height:2;font-size:14px;font-family:'Microsoft YaHei';">Tomcat启动完毕后，如果没有任何异常，则可以直接访问jeeshop的后台了。</span> 
+		</div>
+		<div style="margin-left:30px;">
+			<span style="line-height:2;font-size:14px;font-family:'Microsoft YaHei';">门户访问:http://ip:port/jeeshop</span><br />
+			<p>
+				<span style="line-height:2;font-size:14px;font-family:'Microsoft YaHei';"> 后台访问:http://ip:port/jeeshop/manage/admin.jsp</span> 
+			</p>
+		</div>
+<pre>后台账号
+	admin/123456	管理员账号，拥有全部权限
+	test1/123456	测试账号，只拥有查询权限
+门户测试账号：test1/123456</pre>
+	</li>
+</ol>
+<h3>
+	二、配置图片服务器
+</h3>
+<p class="p0" style="text-indent:21.0000pt;">
+	<span style="line-height:2;font-size:14px;font-family:'Microsoft YaHei';">jeeshop目前只支持使用阿里云的OSS作为图片服务器来存储图片，新手朋友去可以阿里云的官方网站</span><a href="http://www.aliyun.com/" target="_blank"><span style="line-height:2;font-size:14px;font-family:'Microsoft YaHei';">http://www.aliyun.com/</span></a><span style="line-height:2;font-size:14px;font-family:'Microsoft YaHei';">注册一个账号，然后开通存储服务OSS，如果是新账号阿里云一般是先免费给使用的。</span> 
+</p>
+<p class="p0" style="text-indent:21.0000pt;">
+	<span style="line-height:2;font-size:14px;font-family:'Microsoft YaHei';">开通OSS存储服务之后，需要手动创建jeeshop能够识别的目录结构。目录结构图如下：</span> 
+</p>
+<p class="p0" style="text-indent:21.0000pt;">
+	<span style="line-height:2;"><img border="1" src="http://jeeshopweb.oss-cn-hangzhou.aliyuncs.com/ArticleImage/2.JPG" alt="" /><br />
+</span> 
+</p>
+<p class="p0" style="text-indent:21.0000pt;">
+	<span style="line-height:2;font-size:14px;font-family:'Microsoft YaHei';">目录结构编辑完成后，进行jeeshop的后台，在左侧菜单中找到【系统管理】--【系统设置】--图片设置，修改“图片根路径”为你申请的OSS存储服务的图片的跟路径。</span> 
+</p>
+<p class="p0" style="text-indent:21.0000pt;">
+	<span style="line-height:2;font-size:14px;font-family:'Microsoft YaHei';">比如你申请的OSS的创建的Bucket为jeeshop11，则你的图片跟路径为：http://jeeshop11.oss.aliyuncs.com ，填写好以后，点击保存，并重启服务或者手动加载缓存以使得修改生效。</span> 
+</p>
+<p class="p0" style="text-indent:21.0000pt;">
+	<span style="line-height:24px;"><span style="font-size:14px;font-family:'Microsoft YaHei';">最后，在jeeshop的后台【第三方插件】---【存储管理】中修改阿里云存储的配置信息为你自己的ID、KEY、bucketName。（</span><span style="color:#E53333;font-size:14px;font-family:'Microsoft YaHei';"><strong>查找自己OSS存储配置信息ID和KEY的方法为：</strong></span><span style="line-height:24px;color:#E53333;font-size:14px;font-family:'Microsoft YaHei';"><strong>登陆阿里云，进入控制台首页-----开放存储服务OSS，点击页面右上角的ACCESSKEY管理，然后创建自己的Access key。</strong></span><strong></strong><span style="font-size:14px;font-family:'Microsoft YaHei';">）</span></span> 
+</p>
+<p class="p0" style="text-indent:21.0000pt;">
+	<span style="line-height:24px;"><img border="1" src="http://jeeshopweb.oss-cn-hangzhou.aliyuncs.com/ArticleImage/4.JPG" alt="" /><br />
+</span> 
+</p>
+<p class="p0" style="text-indent:21.0000pt;">
+	<span style="line-height:2;font-size:14px;font-family:'Microsoft YaHei';">到此，你的jeeshop项目的图片服务器已经配置完毕。</span> 
+</p>
+<p class="p0" style="text-indent:21.0000pt;">
+	<br />
+</p>
+<h3>
+	四、配置jeeshop系统邮箱
+</h3>
+<p class="p0" style="text-indent:21.0000pt;">
+	<span style="line-height:2;font-size:14px;font-family:'Microsoft YaHei';">邮箱对于任何一个系统都很重要，它负责发送注册、找回密码、修改密码、商品到货通知、商品降价通知以及等等等等。同样，邮箱对于jeeshop系统而言也很重要。</span> 
+</p>
+<p class="p0" style="text-indent:21.0000pt;">
+	<span style="line-height:2;font-size:14px;font-family:'Microsoft YaHei';">找到jeeshop/src/system.properties文件找到下面几行代码，就可以修改jeeshop所关联的邮箱信息了。</span> 
+</p>
+<pre>from_email_account = xxx@163.com
+from_email_password = xxx
+from_eamil_smtpServer = smtp.163.com
+</pre>
+<p>
+	<br />
+</p>
+<h3>
+	五、常见问题
+</h3>
+<ol>
+	<li>
+		<span style="line-height:2;font-size:14px;font-family:'Microsoft YaHei';">为什么本地启动系统，使用QQ或新浪微博登陆会出现空白页面。</span> 
+		<p class="p0" style="text-indent:21.0000pt;">
+			<span style="line-height:2;font-size:14px;font-family:'Microsoft YaHei';">解答：QQ或新浪微博登陆必须在有公网IP的服务器上进行调试才行，因为这两个接口登陆成功会访问回调URL，找不到则会出现空白页面。</span> 
+		</p>
+	</li>
+	<li>
+		<span style="line-height:2;font-size:14px;font-family:'Microsoft YaHei';">为什么本地启动系统后访问门户非常非常慢，甚至一分钟都不出来。</span> 
+		<p class="p0" style="text-indent:21.0000pt;">
+			<span style="line-height:2;font-size:14px;font-family:'Microsoft YaHei';">解答：请确保本地能够上网，因为项目中使用到了网络字体库。</span> 
+		</p>
+	</li>
+	<li>
+		<span style="line-height:2;font-size:14px;font-family:'Microsoft YaHei';">git上下载的jeeshop有sql文件或者使用说明，数据库等设计文档之类的东西吗？</span> 
+		<p class="p0" style="text-indent:21.0000pt;">
+			<span style="line-height:2;font-size:14px;font-family:'Microsoft YaHei';">解答：有的，在web/doc目录下面。</span> 
+		</p>
+	</li>
+	<li>
+		<span style="line-height:2;font-size:14px;font-family:'Microsoft YaHei';">项目部署后会出现乱码？是否需要修改系统的什么配置？</span> 
+		<p class="p0" style="text-indent:21.0000pt;">
+			<span style="line-height:2;font-size:14px;font-family:'Microsoft YaHei';">解答：不需要修改系统配置的，只需要修改启动容器的编码，比如tomcat是server.xml的Connector节点增加URIEncoding="UTF-8"属性。</span> 
+		</p>
+	</li>
+</ol>
+<p>
+	<br />
+</p>
+<p style="text-align:right;">
+	--【未完待续】
+</p>
+
+					  	<hr style="margin-bottom:5px;">
+					  	
+							by：<a href="http://www.jeeshop.net">jeeshop （转载请注明出处！）</a>
+					  	
+					  	
+				  	</div>
+				 </div>
+				 
+				 <!-- 用户评论列表 -->
+				
+<!-- 用户评论列表 -->
+<div>
+	<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread" data-form-position="top" data-limit="25" data-order="desc" data-thread-key="10058"></div>
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"jeeshop"};
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = 'http://static.duoshuo.com/embed.js';
+			ds.charset = 'UTF-8';
+			(document.getElementsByTagName('head')[0] 
+			|| document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+	</script>
+	<!-- Duoshuo Comment END -->
+</div>
+			</div>
+			
+<!-- 			<div class="col-md-3"> -->
+				<!-- 博客公告 -->
+
+				<!-- 博客栏目 -->
+
+				<!-- 文章阅读排行榜、 -->
+
+<!-- 			</div> -->
+		</div>
+	</div>
+	
+
+
+
+
+
+
+
+		<script src="/resource/theme/fixed/js/jquery-1.7.2.js"></script>
+		<script src="/resource/js/jquery.lazyload.min.js"></script>
+		<script src="/resource/theme/fixed/js/bootstrap.js"></script>
+
+		<script src="/resource/theme/fixed/js/main.js"></script>
+
+
+
+		<script src='/resource/theme/fixed/js/jquery.mobile.customized.min.js'></script>
+		<script src='/resource/theme/fixed/js/jquery.easing.1.3.js'></script>
+		<script src='/resource/theme/fixed/js/jquery.cookie.js'></script>
+
+
+
+		<script src='/resource/theme/fixed/js/supersized.3.2.7.js'></script>
+		<script src='/resource/theme/fixed/js/supersized.shutter.js'></script>
+		<script src='/resource/theme/fixed/js/superfish.js'></script>
+
+
+		
+		<!--æ³¨éæè®¾ç½®ç»ä»¶ <script src="js/style_panel_inc.js"></script>-->
+
+
+
+		
+		<!--
+		<script src='js/flickr_tweet.js'></script>
+		<script src='js/jquery.tweet.js'></script>
+		-->
+		<!--[if IE]>
+		<script src="js/html5.js"></script>
+		<![endif]-->
+<footer>
+	<!-- End Sub Footer  -->
+			<div class="footer">
+				<div class="container">
+					<div class="row">
+						<div class="span16">
+							<div class="copyright" style="text-align: center;float:none;">
+								<p>
+<!-- 									&copy; -->
+									©2013 jeeshop.net 沪ICP备13028197号-3
+									<a target="_blank" href="http://www.aliyun.com/"><img src="http://gtms01.alicdn.com/tps/i1/T1W6.aFbFbXXcZj_6s-96-18.png" alt="运行在阿里云" /></a>
+									<!-- cnzz站点统计 -->
+					
+									<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1000234875'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s96.cnzz.com/z_stat.php%3Fid%3D1000234875%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+								</p>
+							</div>
+							<ul class="social icon" style="display:none;">
+								<li>
+<!-- 									<a target="_blank" class="social_facebook" title="jeeshop git" href="http://git.oschina.net/jeeshop/jeeshop"></a> -->
+									<a class="social_facebook" style="background-image: url('http://www.oschina.net/img/favicon.ico');" title="oschina" href="http://www.oschina.net/"></a>
+								</li>
+								<li>
+									<a class="social_twitter" title="Twitter" href="https://twitter.com/"></a>
+								</li>
+								<li>
+									<a class="social_flickr" title="Flickr" href="http://www.flickr.com/"></a>
+								</li>
+								<li>
+									<a class="social_pinterest" title="Pinterest" href="http://pinterest.com/"></a>
+								</li>
+								<li>
+									<a class="social_digg" title="Digg" href="http://digg.com/"></a>
+								</li>
+								<li>
+									<a class="social_vimeo" title="Vimeo" href="http://vimeo.com/"></a>
+								</li>
+								<li>
+									<a class="social_rss" title="Rss" href="#"></a>
+								</li>
+							</ul>
+							<div class="social_responsive_toggle">
+								<span>+</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+</footer>
+
+
+<div class="backtotop">
+			<span>top</span>
+		</div>
+
+<div id="footer" style="display:none;">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12"><hr></div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-12" style="text-align: center;">
+				<!-- 友情链接 -->
+				<div style="text-align: center;margin: auto;">
+					
+					
+				</div>
+			</div>
+		</div>
+		
+		<hr style="margin: 0px;">
+		<div class="row" style="margin-top: 5px;margin-bottom: 50px;">
+			<div class="col-md-3">&nbsp;
+			</div>
+			<div class="col-md-6">
+				<div style="text-align: center;">©2013 jeeshop.net 沪ICP备13028197号-3
+					<a target="_blank" href="http://www.aliyun.com/"><img src="http://gtms01.alicdn.com/tps/i1/T1W6.aFbFbXXcZj_6s-96-18.png" alt="运行在阿里云" /></a>
+					<!-- cnzz站点统计 -->
+					<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1000234875'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s96.cnzz.com/z_stat.php%3Fid%3D1000234875%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+				</div>
+			</div>
+			<div class="col-md-3">&nbsp;
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<script>
+function search(){
+	var _key = $.trim($("#key").val());
+	if(_key==''){
+		return false;
+	}
+	$("#searchForm").submit();
+}
+
+$(function() {
+	$("img.lazy").lazyload({
+		//threshold : 200,
+		//placeholder : "http://imgt4.bdstatic.com/it/u=2281794157,3480422365&fm=21&gp=0.jpg",
+		//event : "click"
+		effect : "fadeIn"
+		//event:"mouseover"
+	});
+
+	if(1==2){
+		$.support.mozilla = /firefox/.test(navigator.userAgent.toLowerCase()); 
+		$.support.webkit = /webkit/.test(navigator.userAgent.toLowerCase()); 
+		$.support.opera = /opera/.test(navigator.userAgent.toLowerCase()); 
+		$.support.msie = /msie/.test(navigator.userAgent.toLowerCase());
+
+		if(1==2){
+			console.log("$.support.mozilla="+$.support.mozilla);
+			console.log("$.support.webkit="+$.support.webkit);
+			console.log("$.support.opera="+$.support.opera);
+			console.log("$.support.msie="+$.support.msie);
+		}
+
+		if($.support.msie){
+			//if(7 > $.browser.version){
+			
+			//}
+		}
+		//if (!$.support.leadingWhitespace) {
+			//alert("version=6-8");
+		//}
+
+		var version = $.browser.version;
+		alert("version="+version);
+	}
+
+});
+</script>
+
+
+	
+	<!-- baidu fenxiang -->
+	
+
+
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"0","bdPos":"right","bdTop":"100"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+<!-- Baidu Button END -->
+</body>
+</html>
