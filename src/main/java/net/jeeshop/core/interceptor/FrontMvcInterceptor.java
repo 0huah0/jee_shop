@@ -26,19 +26,19 @@ public class FrontMvcInterceptor implements HandlerInterceptor{
 			HttpServletResponse arg1, Object arg2, Exception arg3)
 			throws Exception {
 		logger.info("=========================================== after exception =============");
-		
+		System.out.println("=========================================== after exception =============");
 	}
 
 	@Override
 	public void postHandle(HttpServletRequest arg0, HttpServletResponse arg1,
 			Object arg2, ModelAndView arg3) throws Exception {
-		
+		System.out.println("===========================================postHandle=============");
 	}
 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
 			Object arg2) throws Exception {
-
+		System.out.println("===========================================preHandle=============");
 		try {
 			return true;
 //			return intercept0(actionInvocation);

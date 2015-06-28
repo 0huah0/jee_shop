@@ -12,7 +12,6 @@ $(function(){
 			$("input[type=checkbox]").prop("checked", false);
 		}
 	});
-	
 	//为了使用bootstrap2的图标功能，只有牺牲使用struts2的s:submit方式提交表单。
 	//这里对s:form表单的action进行重新组装，加上了你点击的按钮的method="update"方法，最后验证通过则提交表单。
 	$("form").on('click', 'button', function(e){
@@ -29,7 +28,7 @@ $(function(){
 		console.log(buttonMethod);
 		var _formAction = $(form).attr("action");
 		var aa = _formAction.substring(0,_formAction.lastIndexOf("/")+1);
-		console.log(aa);
+		console.log("aa="+aa);
 		
 		var lastFormAction = aa+buttonMethod;
 		console.log("lastFormAction="+lastFormAction);

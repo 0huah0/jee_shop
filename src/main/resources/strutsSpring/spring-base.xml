@@ -32,7 +32,7 @@
 <!-- 	</bean> -->
 
 	<!-- 角色 -->
-	<bean id="roleServiceManage" class=" net.jeeshop.services.manage.system.impl.RoleService">
+	<bean id="roleServiceManage" class="net.jeeshop.services.manage.system.impl.RoleService">
 		<property name="dao" ref="baseDao"></property>
 		<property name="privilegeService" ref="privilegeServiceManage"></property>
 	</bean>
@@ -41,7 +41,7 @@
 <!-- 	</bean> -->
 
 	<!-- 资源 -->
-	<bean id="menuServiceManage" class=" net.jeeshop.services.manage.system.impl.MenuService">
+	<bean id="menuServiceManage" class="net.jeeshop.services.manage.system.impl.MenuService">
 		<property name="dao" ref="baseDao"></property>
 	</bean>
 <!-- 	<bean id="menuActionManage" class=" net.jeeshop.web.action.manage.system.MenuAction"> -->
@@ -50,7 +50,7 @@
 <!-- 	</bean> -->
 
 	<!-- 权限 -->
-	<bean id="privilegeServiceManage" class="  net.jeeshop.services.manage.system.impl.PrivilegeService">
+	<bean id="privilegeServiceManage" class="net.jeeshop.services.manage.system.impl.PrivilegeService">
 		<property name="dao" ref="baseDao"></property>
 	</bean>
 <!-- 	<bean id="privilegeActionManage" class="net.jeeshop.web.action.manage.system.PrivilegeAction"> -->

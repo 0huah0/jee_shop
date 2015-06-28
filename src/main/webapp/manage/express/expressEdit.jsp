@@ -9,7 +9,7 @@
 </head>
 
 <body>
-<form action="express" namespace="/manage" theme="simple" id="form">
+<form action="express" namespace="/manage" theme="simple" id="form" method="post">
 
 	<table class="table table-bordered">
 		<tr style="display: none;">
@@ -36,7 +36,7 @@
 		<tr>
 			<td style="text-align: right;">费用</td>   
 			<td style="text-align: left;">
-			<input type="text" name="fee" id="fee" data-rule="费用:required;integer;fee;length[1~5];" value='<c:out value="${e.fee}" />'/>
+			<input type="text" name="fee" id="fee" data-rule="费用:required;float;fee;length[1~5];" value='<c:out value="${e.fee}" />'/>
 			</td>
 		</tr>
 		<tr>

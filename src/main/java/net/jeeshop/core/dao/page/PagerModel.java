@@ -14,6 +14,7 @@ import net.jeeshop.core.ManageContainer;
  */
 public class PagerModel implements ClearBean {
 	private int total; // 总数
+	@SuppressWarnings("rawtypes")
 	private List list; // 分页集合列表
 	private int pageSize = ManageContainer.PAGE_SIZE;// 每页显示记录数
 	private int offset; // 偏移量
@@ -61,10 +62,12 @@ public class PagerModel implements ClearBean {
 		this.total = total;
 	}
 
+	@SuppressWarnings("rawtypes")
 	public List getList() {
 		return list == null ? new LinkedList() : list;
 	}
 
+	@SuppressWarnings("rawtypes")
 	public void setList(List list) {
 		this.list = list;
 	}

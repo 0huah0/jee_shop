@@ -26,39 +26,62 @@ public abstract class BaseAction<E extends PagerModel> extends
 	private static final Logger logger = LoggerFactory
 			.getLogger(BaseAction.class);
 	protected static final long serialVersionUID = 1L;
-	protected  String toList = "toList";
-	protected  String selectAllList = "selectAllList";
-	protected  String toEdit = "toEdit";
-	protected  String toAdd = "toAdd";
+	
+	protected String toList = "toList";
+	
+	protected String selectAllList = "selectAllList";
+	
+	protected String toEdit = "toEdit";
+	
+	protected String toAdd = "toAdd";
 	@Deprecated
-	protected  String toShow = "toShow";
+	protected String toShow = "toShow";
 
-	protected  String show = "show";// 显示
+	protected String show = "show";// 显示
 
-	protected  String toOptionSuccess = "toOptionSuccess";//
+	protected String toOptionSuccess = "toOptionSuccess";//
+	
 	protected String init;// init=y 是否进行初始化查询，初始化查询会清除所有的查询条件
 
-	protected  String SUCCESS = "";
-	protected  String INPUT = "";
-	protected  Model model;
+	protected String SUCCESS = "";
 	
+	protected String INPUT = "";
+	
+	protected Model model;
+
+	/**
+	 * 对应页面上的选中的复选框，提单到后台的时候会自动进入该数组
+	 */
+	protected String[] ids;
+	/**
+	 * 分页模版
+	 */
+	protected PagerModel pager = new PagerModel();
+	/**
+	 * 抽象的业务逻辑层接口句柄，子类可以通过重写setServer方法注入指定的具体业务逻辑句柄来实现个性化需求
+	 */
+	protected Services<E> server;
+	protected E e;
+
 	/*************
-	 *   获取request response
+	 * 获取request response
 	 */
 	protected HttpServletRequest request;
-	protected HttpServletResponse response;
 	
+	protected HttpServletResponse response;
+
 	@ModelAttribute
 	public void setReqAndRes(HttpServletRequest request,
-			HttpServletResponse response,@ModelAttribute("e") E e,String[] ids,Model model) {
-		this.e = e;  // 将request中的对象放入action，模拟struts2 属性对象的自动封装
+			HttpServletResponse response, @ModelAttribute("e") E e,
+			String[] ids, Model model) {
+		this.e = e; // 将request中的对象放入action，模拟struts2 属性对象的自动封装
 		this.request = request;
 		this.response = response;
 		this.model = model;
 		this.ids = ids;
 		model.addAttribute("e", e);
-		logger.error("BaseAction:method called before:request="+request+",response="+response
-				+",e="+JSON.toJSONString(e));
+		logger.error("BaseAction:method called before:request=" + request
+				+ ",response=" + response + ",e=" + JSON.toJSONString(e));
 	}
 
 	/**
@@ -83,20 +106,6 @@ public abstract class BaseAction<E extends PagerModel> extends
 	public void setInit(String init) {
 		this.init = init;
 	}
-
-	/**
-	 * 对应页面上的选中的复选框，提单到后台的时候会自动进入该数组
-	 */
-	protected String[] ids;
-	/**
-	 * 分页模版
-	 */
-	protected PagerModel pager = new PagerModel();
-	/**
-	 * 抽象的业务逻辑层接口句柄，子类可以通过重写setServer方法注入指定的具体业务逻辑句柄来实现个性化需求
-	 */
-	protected Services<E> server;
-	protected E e;
 
 	/**
 	 * 在action方法执行之前做的准备操作 (non-Javadoc)
@@ -222,6 +231,7 @@ public abstract class BaseAction<E extends PagerModel> extends
 	 * @return PagerModel
 	 * @throws Exception
 	 */
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@RequestMapping("/selectPagerModelByServices")
 	public PagerModel selectPagerModelByServices(Services services,
 			PagerModel pm) throws Exception {
@@ -257,7 +267,7 @@ public abstract class BaseAction<E extends PagerModel> extends
 	 * @throws Exception
 	 */
 	@RequestMapping("/selectList")
-	public String selectList() throws Exception{
+	public String selectList() throws Exception {
 		/**
 		 * 由于prepare方法不具备一致性，加此代码解决init=y查询的时候条件不被清除干净的BUG
 		 */
@@ -267,8 +277,7 @@ public abstract class BaseAction<E extends PagerModel> extends
 
 		int offset = 0;// 分页偏移量
 		if (request.getParameter("pager.offset") != null) {
-			offset = Integer
-					.parseInt(request.getParameter("pager.offset"));
+			offset = Integer.parseInt(request.getParameter("pager.offset"));
 		}
 		if (offset < 0)
 			offset = 0;
@@ -344,7 +353,7 @@ public abstract class BaseAction<E extends PagerModel> extends
 	@RequestMapping("/toEdit")
 	public String toEdit() throws Exception {
 		e = getServer().selectOne(getE());
-		model.addAttribute("e", e);  // 这里e实际上已经指向了另一个内存地址，所以需要重新绑定model
+		model.addAttribute("e", e); // 这里e实际上已经指向了另一个内存地址，所以需要重新绑定model
 		return toEdit;
 	}
 
@@ -390,13 +399,14 @@ public abstract class BaseAction<E extends PagerModel> extends
 	// }
 	// }
 	// }
-	
+
 	/**
-	 *  获取项目 basePath
+	 * 获取项目 basePath
 	 */
-	protected String getBasePath(){
+	protected String getBasePath() {
 		String path = request.getContextPath();
-		String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
+		String basePath = request.getScheme() + "://" + request.getServerName()
+				+ ":" + request.getServerPort() + path + "/";
 		return basePath;
 	}
 }
